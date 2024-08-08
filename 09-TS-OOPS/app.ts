@@ -1,73 +1,75 @@
 interface IMobile {
-    brand : string;
-    price : number;
-    color : string;
+  brand: string;
+  price: number;
+  color: string;
 }
+// Simple Function
 /*let mobile:Mobile = {
     brand : 'Apple',
     color : 'Silver',
     price : 35000
 };
 console.log(mobile);
-console.log(mobile.brand);*/
+console.log(mobile.brand);*/ // You can't access the brand properties directly because of access modifier is private
+
 /*
     private : only access inside the class
     protected : inside the class + its child class only
     public : access every where
  */
-class Mobile{
-    // properties
-    private brand: string;
-    private price: number;
-    private color: string;
 
-    // constructor
-    constructor(brand:string , color:string , price:number) {
-        this.brand = brand;
-        this.color = color;
-        this.price = price;
-    }
+class Mobile {
+  // properties
+  private brand: string;
+  private price: number;
+  private color: string;
 
-    // getter - setter
-    public getBrand():string{
-        return this.brand;
-    }
+  // constructor
+  constructor(brand: string, color: string, price: number) {
+    this.brand = brand;
+    this.color = color;
+    this.price = price;
+  }
 
-    public setBrand(brand : string):void{
-        this.brand = brand;
-    }
+  // getter - setter
+  public getBrand(): string {
+    return this.brand;
+  }
 
-    public getPrice():number{
-        return this.price;
-    }
+  public setBrand(brand: string): void {
+    this.brand = brand;
+  }
 
-    public setPrice(price:number):void{
-        this.price = price;
-    }
+  public getPrice(): number {
+    return this.price;
+  }
 
-    public getColor():string{
-        return this.color;
-    }
+  public setPrice(price: number): void {
+    this.price = price;
+  }
 
-    public setColor(color : string):void{
-        this.color = color;
-    }
+  public getColor(): string {
+    return this.color;
+  }
 
-    // instance method
-    public getMobileSpec():void{
-        let spec:string = `Brand : ${this.getBrand()}
+  public setColor(color: string): void {
+    this.color = color;
+  }
+
+  // instance method
+  public getMobileSpec(): void {
+    let spec: string = `Brand : ${this.getBrand()}
                            Color : ${this.getColor()}
                            Price : ${this.getPrice()}`;
-        console.log(spec);
-    }
+    console.log(spec);
+  }
 
-    // static method
-    public static getTime():void{
-        console.log(new Date().toLocaleTimeString());
-    }
-
+  // static method
+  public static getTime(): void {
+    console.log(new Date().toLocaleTimeString());
+  }
 }
-let mobile = new Mobile('Apple' , 'Silver', 35000);
+let mobile = new Mobile("Apple", "Silver", 35000);
 console.log(mobile);
 // access the props of a class
 console.log(mobile.getBrand());
